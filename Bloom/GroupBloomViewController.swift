@@ -20,23 +20,32 @@ class GroupBloomViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.contentInset = UIEdgeInsetsMake(ContentInset, 0, 0, 0)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 60
         self.bloomView.startBloom()
     }
 }
 
-extension GroupBloomViewController {
-    
-}
-
 extension GroupBloomViewController: UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        if section == 0 {
+            return 1
+        } else {
+            return 30
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = UITableViewCell()
+            cell.backgroundColor = UIColor.clearColor()
+            return cell
+        }
+        
         if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") {
             return cell
         } else {
@@ -46,13 +55,27 @@ extension GroupBloomViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return ContentInset
+        } else {
+            return UITableViewAutomaticDimension
+        }
+    }
 }
 
 extension GroupBloomViewController: UITableViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        let y = scrollView.contentOffset.y + ContentInset
-//        var normalizedY = y / ContentInset
-//        normalizedY = min(1, max(0, normalizedY))
-//        scrollView.backgroundColor = UIColor(white: 1, alpha: normalizedY * (MaximumAlpha - MinimumAlpha) + MinimumAlpha)
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return nil
+        }
+        
+        let label = UILabel()
+        label.backgroundColor = Colors.primaryColor.colorWithAlphaComponent(0.7)
+        label.textAlignment = .Center
+        label.text = "17th April 2016"
+        label.textColor = UIColor.whiteColor()
+        return label
     }
 }
