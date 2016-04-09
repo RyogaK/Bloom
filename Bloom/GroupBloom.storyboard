@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIf-jZ-cNO" customClass="BloomView" customModule="Bloom" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="crg-k5-C7p">
@@ -103,24 +103,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQs-5m-wsy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUG-NB-OiB">
                                 <rect key="frame" x="534" y="534" width="50" height="50"/>
                                 <state key="normal" image="button_off"/>
                                 <state key="highlighted" image="button_on"/>
+                                <connections>
+                                    <action selector="didTapActionButton:" destination="jzj-QV-vU9" eventType="touchUpInside" id="AE6-7i-boX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="8CL-7M-9MJ"/>
                             <constraint firstAttribute="trailing" secondItem="crg-k5-C7p" secondAttribute="trailing" id="B7Q-eY-ZRV"/>
-                            <constraint firstItem="pIf-jZ-cNO" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="JRr-Yv-vp8"/>
+                            <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="MUG-NB-OiB" secondAttribute="bottom" constant="16" id="LqH-mO-Qzu"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="pIf-jZ-cNO" secondAttribute="bottom" id="Mdb-Sa-aQ9"/>
                             <constraint firstAttribute="trailing" secondItem="pIf-jZ-cNO" secondAttribute="trailing" id="P56-W6-7vc"/>
-                            <constraint firstAttribute="bottom" secondItem="yQs-5m-wsy" secondAttribute="bottom" constant="16" id="h21-87-uCJ"/>
+                            <constraint firstAttribute="trailing" secondItem="MUG-NB-OiB" secondAttribute="trailing" constant="16" id="gLH-cp-J28"/>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="nU4-J2-aTy"/>
+                            <constraint firstItem="pIf-jZ-cNO" firstAttribute="top" secondItem="8ja-dH-Mv6" secondAttribute="top" id="qza-wc-Dax"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="crg-k5-C7p" secondAttribute="bottom" id="thb-9o-RtC"/>
                             <constraint firstItem="pIf-jZ-cNO" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="yuR-hp-dDJ"/>
-                            <constraint firstAttribute="trailing" secondItem="yQs-5m-wsy" secondAttribute="trailing" constant="16" id="zkx-99-DhL"/>
                         </constraints>
                     </view>
                     <connections>

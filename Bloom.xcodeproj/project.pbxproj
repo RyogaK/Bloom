@@ -19,6 +19,9 @@
 		298C114A1CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11491CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift */; };
 		298C114D1CB914E300F2453B /* ChangeRootViewControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C114C1CB914E300F2453B /* ChangeRootViewControllerSegue.swift */; };
 		298C115C1CB95E8E00F2453B /* BloomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C115B1CB95E8E00F2453B /* BloomView.swift */; };
+		298C115E1CB9865F00F2453B /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C115D1CB9865F00F2453B /* ModalPresentationController.swift */; };
+		298C11601CB9887900F2453B /* ActionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298C115F1CB9887900F2453B /* ActionModal.storyboard */; };
+		298C11661CB9C74900F2453B /* ActionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11651CB9C74900F2453B /* ActionModalViewController.swift */; };
 		29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */; };
 		29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */; };
 		29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A21CB8DEFF006A1D42 /* Login.storyboard */; };
@@ -72,6 +75,9 @@
 		298C11491CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardAvoidance.swift"; sourceTree = "<group>"; };
 		298C114C1CB914E300F2453B /* ChangeRootViewControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeRootViewControllerSegue.swift; sourceTree = "<group>"; };
 		298C115B1CB95E8E00F2453B /* BloomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomView.swift; sourceTree = "<group>"; };
+		298C115D1CB9865F00F2453B /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
+		298C115F1CB9887900F2453B /* ActionModal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActionModal.storyboard; sourceTree = "<group>"; };
+		298C11651CB9C74900F2453B /* ActionModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionModalViewController.swift; sourceTree = "<group>"; };
 		29B3679B1CB8DEFF006A1D42 /* Bloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				298C115B1CB95E8E00F2453B /* BloomView.swift */,
+				298C115D1CB9865F00F2453B /* ModalPresentationController.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 				29B367D11CB8F8AA006A1D42 /* Resources */,
 				29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */,
 				29B367CE1CB8E312006A1D42 /* GroupBloomViewController.swift */,
+				298C11651CB9C74900F2453B /* ActionModalViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 			children = (
 				29B367A21CB8DEFF006A1D42 /* Login.storyboard */,
 				29B367CC1CB8E294006A1D42 /* GroupBloom.storyboard */,
+				298C115F1CB9887900F2453B /* ActionModal.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -370,6 +379,7 @@
 				29B367A61CB8DEFF006A1D42 /* Assets.xcassets in Resources */,
 				29B367CD1CB8E294006A1D42 /* GroupBloom.storyboard in Resources */,
 				29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */,
+				298C11601CB9887900F2453B /* ActionModal.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,10 +456,12 @@
 				298C11461CB90B0F00F2453B /* ThemeApplier.swift in Sources */,
 				298C11381CB8FEF300F2453B /* ActivityItemCell.swift in Sources */,
 				298C11481CB90C8B00F2453B /* Colors.swift in Sources */,
+				298C11661CB9C74900F2453B /* ActionModalViewController.swift in Sources */,
 				29B367CF1CB8E312006A1D42 /* GroupBloomViewController.swift in Sources */,
 				298C114D1CB914E300F2453B /* ChangeRootViewControllerSegue.swift in Sources */,
 				29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */,
 				298C114A1CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift in Sources */,
+				298C115E1CB9865F00F2453B /* ModalPresentationController.swift in Sources */,
 				298C115C1CB95E8E00F2453B /* BloomView.swift in Sources */,
 				298C11431CB903C900F2453B /* BloomAPI.swift in Sources */,
 			);
