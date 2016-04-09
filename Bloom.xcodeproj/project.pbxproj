@@ -13,6 +13,9 @@
 		298C113D1CB9029F00F2453B /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298C113A1CB9029F00F2453B /* Unbox.framework */; };
 		298C113E1CB9029F00F2453B /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298C113A1CB9029F00F2453B /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		298C11431CB903C900F2453B /* BloomAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11421CB903C900F2453B /* BloomAPI.swift */; };
+		298C11461CB90B0F00F2453B /* ThemeApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11451CB90B0F00F2453B /* ThemeApplier.swift */; };
+		298C11481CB90C8B00F2453B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11471CB90C8B00F2453B /* Colors.swift */; };
+		298C114A1CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11491CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift */; };
 		29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */; };
 		29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */; };
 		29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A21CB8DEFF006A1D42 /* Login.storyboard */; };
@@ -61,6 +64,9 @@
 		298C11391CB9029F00F2453B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		298C113A1CB9029F00F2453B /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		298C11421CB903C900F2453B /* BloomAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomAPI.swift; sourceTree = "<group>"; };
+		298C11451CB90B0F00F2453B /* ThemeApplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeApplier.swift; sourceTree = "<group>"; };
+		298C11471CB90C8B00F2453B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		298C11491CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardAvoidance.swift"; sourceTree = "<group>"; };
 		29B3679B1CB8DEFF006A1D42 /* Bloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +136,16 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		298C11441CB90AFC00F2453B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				298C11451CB90B0F00F2453B /* ThemeApplier.swift */,
+				298C11471CB90C8B00F2453B /* Colors.swift */,
+				298C11491CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		29B367921CB8DEFF006A1D42 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +170,7 @@
 		29B3679D1CB8DEFF006A1D42 /* Bloom */ = {
 			isa = PBXGroup;
 			children = (
+				298C11441CB90AFC00F2453B /* Util */,
 				298C11411CB9039300F2453B /* API */,
 				29B367D01CB8F0A2006A1D42 /* ViewController */,
 				29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */,
@@ -337,9 +354,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */,
+				298C11461CB90B0F00F2453B /* ThemeApplier.swift in Sources */,
 				298C11381CB8FEF300F2453B /* ActivityItemCell.swift in Sources */,
+				298C11481CB90C8B00F2453B /* Colors.swift in Sources */,
 				29B367CF1CB8E312006A1D42 /* GroupBloomViewController.swift in Sources */,
 				29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */,
+				298C114A1CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift in Sources */,
 				298C11431CB903C900F2453B /* BloomAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
