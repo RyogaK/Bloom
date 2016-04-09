@@ -14,6 +14,7 @@ private let MinimumAlpha: CGFloat = 0.0
 
 class GroupBloomViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bloomView: BloomView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class GroupBloomViewController: UIViewController {
         self.tableView.contentInset = UIEdgeInsetsMake(ContentInset, 0, 0, 0)
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 60
+        self.bloomView.startBloom()
     }
 }
 

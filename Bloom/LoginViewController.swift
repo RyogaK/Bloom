@@ -60,8 +60,9 @@ extension LoginViewController {
                 self.performSegueWithIdentifier("loggedIn", sender: self)
             }
             .failure { (error, isCancelled) in
-                //TODO: failure
-                self.performSegueWithIdentifier("loggedIn", sender: self)
+                let alertController = UIAlertController(title: "エラー", message: "入力が間違っています", preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 }
