@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Bloom" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vVP-o0-l8g">
+                                <rect key="frame" x="150" y="177" width="300" height="246"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="300x200" translatesAutoresizingMaskIntoConstraints="NO" id="UGf-BH-CWV">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UD-H1-rKf">
+                                        <rect key="frame" x="0.0" y="216" width="300" height="30"/>
+                                        <state key="normal" title="ログイン"/>
+                                        <connections>
+                                            <segue destination="XID-PN-GUe" kind="show" id="WR6-E4-jBn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6UD-H1-rKf" firstAttribute="top" secondItem="UGf-BH-CWV" secondAttribute="bottom" constant="16" id="2Gf-Jg-4wT"/>
+                                    <constraint firstItem="UGf-BH-CWV" firstAttribute="leading" secondItem="vVP-o0-l8g" secondAttribute="leading" id="I6J-HV-jYi"/>
+                                    <constraint firstAttribute="bottom" secondItem="6UD-H1-rKf" secondAttribute="bottom" id="XoP-ho-Sku"/>
+                                    <constraint firstItem="6UD-H1-rKf" firstAttribute="leading" secondItem="vVP-o0-l8g" secondAttribute="leading" id="fE9-uA-0Q7"/>
+                                    <constraint firstAttribute="trailing" secondItem="6UD-H1-rKf" secondAttribute="trailing" id="nBJ-Bz-SYY"/>
+                                    <constraint firstItem="UGf-BH-CWV" firstAttribute="top" secondItem="vVP-o0-l8g" secondAttribute="top" id="rIE-81-Gg5"/>
+                                    <constraint firstAttribute="trailing" secondItem="UGf-BH-CWV" secondAttribute="trailing" id="t6p-Um-4NH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vVP-o0-l8g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VgF-kd-dBI"/>
+                            <constraint firstItem="vVP-o0-l8g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s1G-WM-EBA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="372"/>
+        </scene>
+        <!--GroupBloom-->
+        <scene sceneID="6Dn-Hl-MdG">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="GroupBloom" storyboardName="GroupBloom" id="XID-PN-GUe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95s-Wa-r8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772.5" y="299"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="300x200" width="300" height="200"/>
+    </resources>
+</document>
