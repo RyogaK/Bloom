@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298C11381CB8FEF300F2453B /* ActivityItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11371CB8FEF300F2453B /* ActivityItemCell.swift */; };
+		298C113B1CB9029F00F2453B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298C11391CB9029F00F2453B /* Alamofire.framework */; };
+		298C113C1CB9029F00F2453B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298C11391CB9029F00F2453B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		298C113D1CB9029F00F2453B /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298C113A1CB9029F00F2453B /* Unbox.framework */; };
+		298C113E1CB9029F00F2453B /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298C113A1CB9029F00F2453B /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */; };
-		29B367A11CB8DEFF006A1D42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367A01CB8DEFF006A1D42 /* ViewController.swift */; };
-		29B367A41CB8DEFF006A1D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A21CB8DEFF006A1D42 /* Main.storyboard */; };
+		29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */; };
+		29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A21CB8DEFF006A1D42 /* Login.storyboard */; };
 		29B367A61CB8DEFF006A1D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A51CB8DEFF006A1D42 /* Assets.xcassets */; };
 		29B367A91CB8DEFF006A1D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A71CB8DEFF006A1D42 /* LaunchScreen.storyboard */; };
 		29B367B41CB8DEFF006A1D42 /* BloomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367B31CB8DEFF006A1D42 /* BloomTests.swift */; };
 		29B367BF1CB8DEFF006A1D42 /* BloomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367BE1CB8DEFF006A1D42 /* BloomUITests.swift */; };
+		29B367CD1CB8E294006A1D42 /* GroupBloom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367CC1CB8E294006A1D42 /* GroupBloom.storyboard */; };
+		29B367CF1CB8E312006A1D42 /* GroupBloomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367CE1CB8E312006A1D42 /* GroupBloomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,11 +40,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		298C113F1CB902A000F2453B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				298C113C1CB9029F00F2453B /* Alamofire.framework in Embed Frameworks */,
+				298C113E1CB9029F00F2453B /* Unbox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		298C11371CB8FEF300F2453B /* ActivityItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItemCell.swift; sourceTree = "<group>"; };
+		298C11391CB9029F00F2453B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		298C113A1CB9029F00F2453B /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		29B3679B1CB8DEFF006A1D42 /* Bloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29B367A01CB8DEFF006A1D42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		29B367A31CB8DEFF006A1D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		29B367A31CB8DEFF006A1D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		29B367A51CB8DEFF006A1D42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29B367A81CB8DEFF006A1D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29B367AA1CB8DEFF006A1D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +72,8 @@
 		29B367BA1CB8DEFF006A1D42 /* BloomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B367BE1CB8DEFF006A1D42 /* BloomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomUITests.swift; sourceTree = "<group>"; };
 		29B367C01CB8DEFF006A1D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B367CC1CB8E294006A1D42 /* GroupBloom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GroupBloom.storyboard; sourceTree = "<group>"; };
+		29B367CE1CB8E312006A1D42 /* GroupBloomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupBloomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298C113B1CB9029F00F2453B /* Alamofire.framework in Frameworks */,
+				298C113D1CB9029F00F2453B /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +103,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		298C11361CB8FEDB00F2453B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				298C11371CB8FEF300F2453B /* ActivityItemCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		298C11401CB902A600F2453B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				298C11391CB9029F00F2453B /* Alamofire.framework */,
+				298C113A1CB9029F00F2453B /* Unbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		29B367921CB8DEFF006A1D42 = {
 			isa = PBXGroup;
 			children = (
+				298C11401CB902A600F2453B /* Frameworks */,
 				29B3679D1CB8DEFF006A1D42 /* Bloom */,
 				29B367B21CB8DEFF006A1D42 /* BloomTests */,
 				29B367BD1CB8DEFF006A1D42 /* BloomUITests */,
@@ -97,9 +144,8 @@
 		29B3679D1CB8DEFF006A1D42 /* Bloom */ = {
 			isa = PBXGroup;
 			children = (
+				29B367D01CB8F0A2006A1D42 /* ViewController */,
 				29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */,
-				29B367A01CB8DEFF006A1D42 /* ViewController.swift */,
-				29B367A21CB8DEFF006A1D42 /* Main.storyboard */,
 				29B367A51CB8DEFF006A1D42 /* Assets.xcassets */,
 				29B367A71CB8DEFF006A1D42 /* LaunchScreen.storyboard */,
 				29B367AA1CB8DEFF006A1D42 /* Info.plist */,
@@ -125,6 +171,26 @@
 			path = BloomUITests;
 			sourceTree = "<group>";
 		};
+		29B367D01CB8F0A2006A1D42 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				298C11361CB8FEDB00F2453B /* Cells */,
+				29B367D11CB8F8AA006A1D42 /* Resources */,
+				29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */,
+				29B367CE1CB8E312006A1D42 /* GroupBloomViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		29B367D11CB8F8AA006A1D42 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29B367A21CB8DEFF006A1D42 /* Login.storyboard */,
+				29B367CC1CB8E294006A1D42 /* GroupBloom.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +201,7 @@
 				29B367971CB8DEFF006A1D42 /* Sources */,
 				29B367981CB8DEFF006A1D42 /* Frameworks */,
 				29B367991CB8DEFF006A1D42 /* Resources */,
+				298C113F1CB902A000F2453B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +260,7 @@
 				TargetAttributes = {
 					29B3679A1CB8DEFF006A1D42 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = SDDB96X336;
 					};
 					29B367AE1CB8DEFF006A1D42 = {
 						CreatedOnToolsVersion = 7.3;
@@ -231,7 +299,8 @@
 			files = (
 				29B367A91CB8DEFF006A1D42 /* LaunchScreen.storyboard in Resources */,
 				29B367A61CB8DEFF006A1D42 /* Assets.xcassets in Resources */,
-				29B367A41CB8DEFF006A1D42 /* Main.storyboard in Resources */,
+				29B367CD1CB8E294006A1D42 /* GroupBloom.storyboard in Resources */,
+				29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +325,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29B367A11CB8DEFF006A1D42 /* ViewController.swift in Sources */,
+				29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */,
+				298C11381CB8FEF300F2453B /* ActivityItemCell.swift in Sources */,
+				29B367CF1CB8E312006A1D42 /* GroupBloomViewController.swift in Sources */,
 				29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,12 +364,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		29B367A21CB8DEFF006A1D42 /* Main.storyboard */ = {
+		29B367A21CB8DEFF006A1D42 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				29B367A31CB8DEFF006A1D42 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		29B367A71CB8DEFF006A1D42 /* LaunchScreen.storyboard */ = {
@@ -349,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,10 +472,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Bloom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.givery.Bloom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -412,10 +490,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Bloom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.givery.Bloom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -484,6 +569,7 @@
 				29B367C51CB8DEFF006A1D42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29B367C61CB8DEFF006A1D42 /* Build configuration list for PBXNativeTarget "BloomTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +578,7 @@
 				29B367C81CB8DEFF006A1D42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29B367C91CB8DEFF006A1D42 /* Build configuration list for PBXNativeTarget "BloomUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +587,7 @@
 				29B367CB1CB8DEFF006A1D42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
