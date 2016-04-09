@@ -9,5 +9,15 @@
 import UIKit
 
 class ActivityItemCell: UITableViewCell {
+    @IBOutlet weak var leftBarView: UIView!
+    @IBOutlet weak var leftCircleView: UIView!
+    @IBOutlet weak var balloonImageView: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.leftBarView.backgroundColor = UIColor.lightGrayColor()
+        self.leftCircleView.layer.cornerRadius = 10
+        self.leftCircleView.layer.borderWidth = 2
+        self.leftCircleView.layer.borderColor = UIColor.lightGrayColor().CGColor
+    }
 }

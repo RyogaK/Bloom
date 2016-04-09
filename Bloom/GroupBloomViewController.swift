@@ -8,9 +8,9 @@
 
 import UIKit
 
-private let ContentInset: CGFloat = 400
-private let MaximumAlpha: CGFloat = 0.9
-private let MinimumAlpha: CGFloat = 0.3
+private let ContentInset: CGFloat = 200
+private let MaximumAlpha: CGFloat = 0.0
+private let MinimumAlpha: CGFloat = 0.0
 
 class GroupBloomViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,8 @@ class GroupBloomViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.contentInset = UIEdgeInsetsMake(ContentInset, 0, 0, 0)
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 60
     }
 }
 
@@ -41,15 +43,14 @@ extension GroupBloomViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.textLabel?.text = "TEST"
     }
 }
 
 extension GroupBloomViewController: UITableViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let y = scrollView.contentOffset.y + ContentInset
-        var normalizedY = y / ContentInset
-        normalizedY = min(1, max(0, normalizedY))
-        scrollView.backgroundColor = UIColor(white: 1, alpha: normalizedY * (MaximumAlpha - MinimumAlpha) + MinimumAlpha)
+//        let y = scrollView.contentOffset.y + ContentInset
+//        var normalizedY = y / ContentInset
+//        normalizedY = min(1, max(0, normalizedY))
+//        scrollView.backgroundColor = UIColor(white: 1, alpha: normalizedY * (MaximumAlpha - MinimumAlpha) + MinimumAlpha)
     }
 }

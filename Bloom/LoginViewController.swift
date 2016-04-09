@@ -55,8 +55,13 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
     @IBAction func didTapLoginButton(sender: AnyObject) {
         //TODO: Login
-        BloomAPI.signin(self.companyTextField.text!, email: self.mailTextField.text!, password: self.passwordTextField.text!).success { response in
-            self.performSegueWithIdentifier("loggedIn", sender: self)
+        BloomAPI.signin(self.companyTextField.text!, email: self.mailTextField.text!, password: self.passwordTextField.text!)
+            .success { response in
+                self.performSegueWithIdentifier("loggedIn", sender: self)
+            }
+            .failure { (error, isCancelled) in
+                //TODO: failure
+                self.performSegueWithIdentifier("loggedIn", sender: self)
         }
     }
 }
