@@ -38,42 +38,22 @@ struct TestResponse: Unboxable {
 }
 
 final class BloomAPI {
-    static func testCall() -> Task<Void, TestResponse, NSError> {
-        return Task<Void, TestResponse, NSError> { progress, fulfill, reject, configure in
-            Alamofire.request(.GET, ApiBaseURL).responseJSON { (response) in
-                if response.result.isSuccess {
-                    if let resultValue = response.result.value as? UnboxableDictionary {
-                        if let parsedValue: TestResponse = Unbox(resultValue) {
-                            fulfill(parsedValue)
-                        } else {
-                            assertionAPIIsBroken()
-                        }
-                    } else {
-                        assertionAPIIsBroken()
-                    }
-                } else if let error = response.result.error {
-                    printErrorResponse(response)
-                    reject(error)
-                } else {
-                    assertionAPIIsBroken()
-                }
-            }
-        }
-    }
 }
 
 extension BloomAPI {
     struct SigninResponse: Unboxable {
         let user: User
+        let token: String
         
         init(unboxer: Unboxer) {
             self.user = unboxer.unbox("user")
+            self.token = unboxer.unbox("token")
         }
         
         struct User: Unboxable {
-            let id: String
+            let id: Int
             let name: String
-            let imageURL: String
+            let imageURL: String?
             
             init(unboxer: Unboxer) {
                 self.id = unboxer.unbox("id")
@@ -86,21 +66,38 @@ extension BloomAPI {
     static func signin(organizationName: String, email: String, password: String) -> Task<Void, SigninResponse, NSError> {
         return Task<Void, SigninResponse, NSError> { progress, fulfill, reject, configure in
             Alamofire.request(.POST, ApiBaseURL + "/auth/signin", parameters: ["organization_name":organizationName, "email":email, "password":password], encoding: .JSON, headers: ["token":"dummytoken"]).responseJSON { (response) in
-                if response.result.isSuccess {
-                    if let resultValue = response.result.value as? UnboxableDictionary {
-                        if let parsedValue: SigninResponse = Unbox(resultValue) {
-                            fulfill(parsedValue)
+                guard let httpResponse = response.response else {
+                    assertionAPIIsBroken()
+                    return
+                }
+                
+                switch httpResponse.statusCode {
+                case 200:
+                    if let error = response.result.error {
+                        printErrorResponse(response)
+                        reject(error)
+                    } else {
+                        if let resultValue = response.result.value as? UnboxableDictionary {
+                            do {
+                                let parsedValue: SigninResponse = try UnboxOrThrow(resultValue)
+                                fulfill(parsedValue)
+                            } catch let error as NSError {
+                                assertionAPIIsBroken(error)
+                            }
                         } else {
                             assertionAPIIsBroken()
                         }
-                    } else {
-                        assertionAPIIsBroken()
                     }
-                } else if let error = response.result.error {
-                    printErrorResponse(response)
-                    reject(error)
-                } else {
+                    break
+                case 400:
+                    reject(NSError(domain: "Bad request", code: httpResponse.statusCode, userInfo: nil))
+                    break
+                case 404:
+                    reject(NSError(domain: "Not found", code: httpResponse.statusCode, userInfo: nil))
+                    break
+                default:
                     assertionAPIIsBroken()
+                    break
                 }
             }
         }
@@ -109,6 +106,10 @@ extension BloomAPI {
 
 private func assertionAPIIsBroken() {
     assertionFailure("API is broken")
+}
+
+private func assertionAPIIsBroken(error: NSError) {
+    assertionFailure("API is broken: \(error)")
 }
 
 private func printErrorResponse(response: Response<AnyObject, NSError>) {
