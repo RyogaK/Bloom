@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tussy-mussy" translatesAutoresizingMaskIntoConstraints="NO" id="4T3-8P-Pnc">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="crg-k5-C7p">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
@@ -37,10 +37,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="crg-k5-C7p" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="8CL-7M-9MJ"/>
                             <constraint firstAttribute="trailing" secondItem="crg-k5-C7p" secondAttribute="trailing" id="B7Q-eY-ZRV"/>
                             <constraint firstAttribute="trailing" secondItem="4T3-8P-Pnc" secondAttribute="trailing" id="H6Y-NW-Ya2"/>
-                            <constraint firstItem="4T3-8P-Pnc" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="ULL-ck-xOb"/>
-                            <constraint firstItem="crg-k5-C7p" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="ZKE-mL-CfK"/>
+                            <constraint firstItem="4T3-8P-Pnc" firstAttribute="top" secondItem="8ja-dH-Mv6" secondAttribute="top" id="NoL-A0-UzV"/>
                             <constraint firstItem="4T3-8P-Pnc" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="hEF-om-ShX"/>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="nU4-J2-aTy"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="4T3-8P-Pnc" secondAttribute="bottom" id="rBE-eX-kTR"/>
