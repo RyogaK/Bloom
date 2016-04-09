@@ -79,3 +79,20 @@ extension GroupBloomViewController: UITableViewDelegate {
         return label
     }
 }
+
+extension GroupBloomViewController: UIViewControllerTransitioningDelegate {
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+        return ModalPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+}
+
+extension GroupBloomViewController {
+    @IBAction func didTapActionButton(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "ActionModal", bundle: nil)
+        if let viewController = storyboard.instantiateInitialViewController() {
+            viewController.modalPresentationStyle = .Custom
+            viewController.transitioningDelegate = self
+            self.presentViewController(viewController, animated: true, completion: nil)
+        }
+    }
+}
