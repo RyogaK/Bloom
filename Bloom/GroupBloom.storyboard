@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tussy-mussy" translatesAutoresizingMaskIntoConstraints="NO" id="4T3-8P-Pnc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIf-jZ-cNO" customClass="BloomView" customModule="Bloom" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +104,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQs-5m-wsy">
-                                <rect key="frame" x="549" y="549" width="35" height="35"/>
+                                <rect key="frame" x="534" y="534" width="50" height="50"/>
                                 <state key="normal" image="button_off"/>
                                 <state key="highlighted" image="button_on"/>
                             </button>
@@ -116,15 +113,11 @@
                         <constraints>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="8CL-7M-9MJ"/>
                             <constraint firstAttribute="trailing" secondItem="crg-k5-C7p" secondAttribute="trailing" id="B7Q-eY-ZRV"/>
-                            <constraint firstAttribute="trailing" secondItem="4T3-8P-Pnc" secondAttribute="trailing" id="H6Y-NW-Ya2"/>
                             <constraint firstItem="pIf-jZ-cNO" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="JRr-Yv-vp8"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="pIf-jZ-cNO" secondAttribute="bottom" id="Mdb-Sa-aQ9"/>
-                            <constraint firstItem="4T3-8P-Pnc" firstAttribute="top" secondItem="8ja-dH-Mv6" secondAttribute="top" id="NoL-A0-UzV"/>
                             <constraint firstAttribute="trailing" secondItem="pIf-jZ-cNO" secondAttribute="trailing" id="P56-W6-7vc"/>
                             <constraint firstAttribute="bottom" secondItem="yQs-5m-wsy" secondAttribute="bottom" constant="16" id="h21-87-uCJ"/>
-                            <constraint firstItem="4T3-8P-Pnc" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="hEF-om-ShX"/>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="nU4-J2-aTy"/>
-                            <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="4T3-8P-Pnc" secondAttribute="bottom" id="rBE-eX-kTR"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="crg-k5-C7p" secondAttribute="bottom" id="thb-9o-RtC"/>
                             <constraint firstItem="pIf-jZ-cNO" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="yuR-hp-dDJ"/>
                             <constraint firstAttribute="trailing" secondItem="yQs-5m-wsy" secondAttribute="trailing" constant="16" id="zkx-99-DhL"/>
@@ -141,9 +134,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="balloon" width="18" height="23"/>
-        <image name="button_off" width="35" height="35"/>
-        <image name="button_on" width="35" height="35"/>
-        <image name="tussy-mussy" width="133" height="225"/>
+        <image name="balloon" width="18" height="24"/>
+        <image name="button_off" width="50" height="50"/>
+        <image name="button_on" width="50" height="50"/>
     </resources>
 </document>
