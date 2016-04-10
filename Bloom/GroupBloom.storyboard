@@ -75,7 +75,7 @@
                                                         <constraint firstItem="J9l-ih-n8h" firstAttribute="top" secondItem="F9w-zd-brN" secondAttribute="top" id="W3D-ea-o1w"/>
                                                         <constraint firstAttribute="bottom" secondItem="J9l-ih-n8h" secondAttribute="bottom" id="aef-r9-vNC"/>
                                                         <constraint firstAttribute="trailing" secondItem="pCG-oO-Ff6" secondAttribute="trailing" constant="16" id="eDS-MM-63V"/>
-                                                        <constraint firstItem="pCG-oO-Ff6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="F9w-zd-brN" secondAttribute="top" constant="8" id="gLc-bw-Fbv"/>
+                                                        <constraint firstItem="pCG-oO-Ff6" firstAttribute="top" secondItem="F9w-zd-brN" secondAttribute="top" constant="8" id="gLc-bw-Fbv"/>
                                                         <constraint firstItem="J9l-ih-n8h" firstAttribute="leading" secondItem="F9w-zd-brN" secondAttribute="leading" id="hP4-rw-Ghz"/>
                                                         <constraint firstItem="piu-Fg-UFv" firstAttribute="leading" secondItem="F9w-zd-brN" secondAttribute="leading" constant="24" id="vIb-3T-l0n"/>
                                                         <constraint firstAttribute="trailing" secondItem="piu-Fg-UFv" secondAttribute="trailing" id="xR9-bG-2PX"/>
@@ -97,8 +97,10 @@
                                         <color key="backgroundColor" red="0.96078431372549022" green="0.96862745098039216" blue="0.96470588235294119" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="balloonImageView" destination="J9l-ih-n8h" id="SX9-fL-5hz"/>
+                                            <outlet property="dateLabel" destination="piu-Fg-UFv" id="LWg-dK-ZRH"/>
                                             <outlet property="leftBarView" destination="saf-G3-a0P" id="mcP-82-2ne"/>
                                             <outlet property="leftCircleView" destination="zMz-0m-pyP" id="gqJ-2z-hOL"/>
+                                            <outlet property="messageLabel" destination="pCG-oO-Ff6" id="Xqw-dn-x5F"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

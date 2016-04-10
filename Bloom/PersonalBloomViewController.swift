@@ -72,14 +72,16 @@ extension PersonalBloomViewController {
 
 extension PersonalBloomViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return groupedFlowers.count + 1
+//        return groupedFlowers.count + 1
+        return 3 + 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
-            return groupedFlowers[section].flowers.count
+//            return groupedFlowers[section].flowers.count
+            return 10
         }
     }
     

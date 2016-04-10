@@ -167,6 +167,13 @@ extension BloomAPI {
             let message: String?
             let sendDate: NSDate
             
+            init(sendId: Int, flowerName: String, message: String?, sendDate: NSDate) {
+                self.sendId = sendId
+                self.message = message
+                self.flowerName = flowerName
+                self.sendDate = sendDate
+            }
+            
             init(unboxer: Unboxer) {
                 self.sendId = unboxer.unbox("send_id")
                 self.flowerName = unboxer.unbox("flower_name")

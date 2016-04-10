@@ -12,6 +12,8 @@ class ActivityItemCell: UITableViewCell {
     @IBOutlet weak var leftBarView: UIView!
     @IBOutlet weak var leftCircleView: UIView!
     @IBOutlet weak var balloonImageView: UIImageView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +21,9 @@ class ActivityItemCell: UITableViewCell {
         self.leftCircleView.layer.cornerRadius = 10
         self.leftCircleView.layer.borderWidth = 2
         self.leftCircleView.layer.borderColor = UIColor.lightGrayColor().CGColor
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 import SwiftTask
 
-private let ContentInset: CGFloat = 200
+private let ContentInset: CGFloat = 500
 private let MaximumAlpha: CGFloat = 0.0
 private let MinimumAlpha: CGFloat = 0.0
 
@@ -36,6 +36,13 @@ class GroupBloomViewController: UIViewController {
         self.tableView.estimatedRowHeight = 60
         self.bloomView.startBloom()
         
+        for i in 0...30 {
+            let send = BloomAPI.OrganizationFlowersResponse.Send(sendId: 0, flowerName: "", message: "田中さん、日曜日にサーバーが落ちた時に、早急な対応をしていただき、ありがとうございました！", sendDate: NSDate())
+            originFlowers.append(send)
+        }
+        
+        self.updateGroupedFlowers()
+        
         self.object = self.flowersFetchController.reload()!.success { (response) in
             self.updateGroupedFlowers()
         }.failure { (error, isCancelled) in
@@ -53,10 +60,9 @@ extension GroupBloomViewController {
             dates.addObject(slicedDate)
         }
         
-        for date in dates {
+        for date in dates.reversedOrderedSet {
             if let date = date as? NSTimeInterval {
                 var flowerGroup = FlowerGroup(date: date, flowers: [])
-                self.groupedFlowers.append(flowerGroup)
                 
                 for flower in originFlowers {
                     let slicedDate = sliceDate(flower.sendDate)
@@ -64,10 +70,13 @@ extension GroupBloomViewController {
                         flowerGroup.flowers.append(flower)
                     }
                 }
+                self.groupedFlowers.append(flowerGroup)
             }
         }
         
-        self.tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
     }
     
     func sliceDate(date: NSDate) -> NSTimeInterval {
@@ -79,13 +88,15 @@ extension GroupBloomViewController {
 extension GroupBloomViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return groupedFlowers.count + 1
+//        return 3 + 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else {
-            return groupedFlowers[section].flowers.count
+            return groupedFlowers[section - 1].flowers.count
+//            return 30
         }
     }
     
@@ -104,13 +115,26 @@ extension GroupBloomViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section != 0 {
+            if let cell = cell as? ActivityItemCell {
+                var message = self.groupedFlowers[indexPath.section - 1].flowers[indexPath.row].message
+
+                let hasMessage = message != ""
+                if hasMessage == false {
+                    message = "誰かがした行いに、「ありがとう」が送られました！"
+                } else {
+                }
+                cell.messageLabel.text = message
+            }
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return ContentInset
         } else {
-            return UITableViewAutomaticDimension
+//            return UITableViewAutomaticDimension
+            return 100
         }
     }
 }
@@ -157,6 +181,10 @@ extension GroupBloomViewController: PagingAPISource {
 extension GroupBloomViewController {
     @IBAction func bloomPostedActionForSegus(segue: UIStoryboardSegue) {
         self.bloomView.addBloom()
+        if let vc = segue.sourceViewController as? ActionModalViewController {
+            self.originFlowers.insert(BloomAPI.OrganizationFlowersResponse.Send(sendId: 0, flowerName: "", message:vc.textField.text , sendDate: NSDate()), atIndex: 0)
+            self.updateGroupedFlowers()
+        }
     }
 }
 

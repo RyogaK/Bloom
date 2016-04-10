@@ -155,23 +155,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUG-NB-OiB">
-                                <rect key="frame" x="534" y="534" width="50" height="50"/>
-                                <state key="normal" image="button_off"/>
-                                <state key="highlighted" image="button_on"/>
-                                <connections>
-                                    <action selector="didTapActionButton:" destination="jzj-QV-vU9" eventType="touchUpInside" id="AE6-7i-boX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="top" secondItem="JCr-yO-WiE" secondAttribute="bottom" id="8CL-7M-9MJ"/>
                             <constraint firstAttribute="trailing" secondItem="crg-k5-C7p" secondAttribute="trailing" id="B7Q-eY-ZRV"/>
-                            <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="MUG-NB-OiB" secondAttribute="bottom" constant="16" id="LqH-mO-Qzu"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="pIf-jZ-cNO" secondAttribute="bottom" id="Mdb-Sa-aQ9"/>
                             <constraint firstAttribute="trailing" secondItem="pIf-jZ-cNO" secondAttribute="trailing" id="P56-W6-7vc"/>
-                            <constraint firstAttribute="trailing" secondItem="MUG-NB-OiB" secondAttribute="trailing" constant="16" id="gLH-cp-J28"/>
                             <constraint firstItem="crg-k5-C7p" firstAttribute="leading" secondItem="8ja-dH-Mv6" secondAttribute="leading" id="nU4-J2-aTy"/>
                             <constraint firstItem="pIf-jZ-cNO" firstAttribute="top" secondItem="8ja-dH-Mv6" secondAttribute="top" id="qza-wc-Dax"/>
                             <constraint firstItem="h4l-5i-Dkl" firstAttribute="top" secondItem="crg-k5-C7p" secondAttribute="bottom" id="thb-9o-RtC"/>
@@ -190,8 +180,6 @@
     </scenes>
     <resources>
         <image name="balloon" width="18" height="24"/>
-        <image name="button_off" width="50" height="50"/>
-        <image name="button_on" width="50" height="50"/>
         <image name="dummy-flower2" width="150" height="150"/>
     </resources>
 </document>

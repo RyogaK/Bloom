@@ -45,8 +45,8 @@ class BloomScene: SKScene {
     }
     
     private func createContents(rect: CGRect) {
-        for i in 0...80 {
-            addFlower(rect, delay: NSTimeInterval(i) * 0.1, nowSended: false)
+        for i in 0...40 {
+            addFlower(rect, delay: NSTimeInterval(i) * 0.03, nowSended: false)
         }
     }
     
