@@ -56,6 +56,16 @@ extension ActionModalViewController: UITextFieldDelegate {
 
 extension ActionModalViewController {
     @IBAction func didTapActionButton(sender: AnyObject) {
-        
+        let userId = AppDelegate.sharedDelegate().store.user!.id
+        let receiverId = 4
+        let flowerName = "red_flower"
+        let message = self.textField.text
+        BloomAPI.postFlowers(userId, receiverId: receiverId, flowerName: flowerName, message: message).success { (_) in
+            self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }.failure { (error, isCancelled) in
+            //TODO: failure
+//            self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
+            self.performSegueWithIdentifier("unwind", sender: nil)
+        }
     }
 }

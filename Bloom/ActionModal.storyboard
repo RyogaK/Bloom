@@ -57,7 +57,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="elD-Nz-Dor"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Thank you!"/>
                                         <connections>
                                             <action selector="didTapActionButton:" destination="wel-6c-FBa" eventType="touchUpInside" id="j2L-Gb-mPA"/>
                                         </connections>
@@ -103,9 +103,11 @@
                         <outlet property="stackView" destination="3JW-43-dpW" id="cjT-AU-4YC"/>
                         <outlet property="textField" destination="moy-6W-dgP" id="1tm-YF-dOj"/>
                         <outlet property="toLabel" destination="RNe-Ji-wGO" id="F8w-aL-gj5"/>
+                        <segue destination="NMa-9i-lwE" kind="unwind" identifier="unwind" unwindAction="bloomPostedActionForSegus:" id="v07-kd-1gl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bR4-z5-Kaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NMa-9i-lwE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="319" y="330"/>
         </scene>

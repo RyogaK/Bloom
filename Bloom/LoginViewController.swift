@@ -57,6 +57,9 @@ extension LoginViewController {
         //TODO: Login
         BloomAPI.signin(self.companyTextField.text!, email: self.mailTextField.text!, password: self.passwordTextField.text!)
             .success { response in
+                AppDelegate.sharedDelegate().store.organization = response.organization
+                AppDelegate.sharedDelegate().store.user = response.user
+                
                 self.performSegueWithIdentifier("loggedIn", sender: self)
             }
             .failure { (error, isCancelled) in

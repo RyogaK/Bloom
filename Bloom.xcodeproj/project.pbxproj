@@ -22,6 +22,12 @@
 		298C115E1CB9865F00F2453B /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C115D1CB9865F00F2453B /* ModalPresentationController.swift */; };
 		298C11601CB9887900F2453B /* ActionModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298C115F1CB9887900F2453B /* ActionModal.storyboard */; };
 		298C11661CB9C74900F2453B /* ActionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11651CB9C74900F2453B /* ActionModalViewController.swift */; };
+		298C11691CB9E4A600F2453B /* PagingAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11681CB9E4A600F2453B /* PagingAPIController.swift */; };
+		298C116B1CB9FC1200F2453B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298C116A1CB9FC1200F2453B /* Home.storyboard */; };
+		298C116D1CB9FC5600F2453B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C116C1CB9FC5600F2453B /* HomeViewController.swift */; };
+		298C116F1CBA034100F2453B /* PersonalBloom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298C116E1CBA034100F2453B /* PersonalBloom.storyboard */; };
+		298C11711CBA043200F2453B /* PersonalBloomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11701CBA043200F2453B /* PersonalBloomViewController.swift */; };
+		298C11731CBA05E300F2453B /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298C11721CBA05E300F2453B /* ProfileCell.swift */; };
 		29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */; };
 		29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */; };
 		29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B367A21CB8DEFF006A1D42 /* Login.storyboard */; };
@@ -78,6 +84,12 @@
 		298C115D1CB9865F00F2453B /* ModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
 		298C115F1CB9887900F2453B /* ActionModal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActionModal.storyboard; sourceTree = "<group>"; };
 		298C11651CB9C74900F2453B /* ActionModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionModalViewController.swift; sourceTree = "<group>"; };
+		298C11681CB9E4A600F2453B /* PagingAPIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingAPIController.swift; sourceTree = "<group>"; };
+		298C116A1CB9FC1200F2453B /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		298C116C1CB9FC5600F2453B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		298C116E1CBA034100F2453B /* PersonalBloom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonalBloom.storyboard; sourceTree = "<group>"; };
+		298C11701CBA043200F2453B /* PersonalBloomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalBloomViewController.swift; sourceTree = "<group>"; };
+		298C11721CBA05E300F2453B /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		29B3679B1CB8DEFF006A1D42 /* Bloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B3679E1CB8DEFF006A1D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				298C11371CB8FEF300F2453B /* ActivityItemCell.swift */,
+				298C11721CBA05E300F2453B /* ProfileCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -180,6 +193,14 @@
 			name = Customs;
 			sourceTree = "<group>";
 		};
+		298C11671CB9E48700F2453B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				298C11681CB9E4A600F2453B /* PagingAPIController.swift */,
+			);
+			name = Module;
+			sourceTree = "<group>";
+		};
 		29B367921CB8DEFF006A1D42 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +226,7 @@
 		29B3679D1CB8DEFF006A1D42 /* Bloom */ = {
 			isa = PBXGroup;
 			children = (
+				298C11671CB9E48700F2453B /* Module */,
 				298C115A1CB95E7500F2453B /* Customs */,
 				298C11441CB90AFC00F2453B /* Util */,
 				298C11411CB9039300F2453B /* API */,
@@ -242,7 +264,9 @@
 				29B367D11CB8F8AA006A1D42 /* Resources */,
 				29B367A01CB8DEFF006A1D42 /* LoginViewController.swift */,
 				29B367CE1CB8E312006A1D42 /* GroupBloomViewController.swift */,
+				298C11701CBA043200F2453B /* PersonalBloomViewController.swift */,
 				298C11651CB9C74900F2453B /* ActionModalViewController.swift */,
+				298C116C1CB9FC5600F2453B /* HomeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -252,7 +276,9 @@
 			children = (
 				29B367A21CB8DEFF006A1D42 /* Login.storyboard */,
 				29B367CC1CB8E294006A1D42 /* GroupBloom.storyboard */,
+				298C116E1CBA034100F2453B /* PersonalBloom.storyboard */,
 				298C115F1CB9887900F2453B /* ActionModal.storyboard */,
+				298C116A1CB9FC1200F2453B /* Home.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -378,6 +404,8 @@
 				29B367A91CB8DEFF006A1D42 /* LaunchScreen.storyboard in Resources */,
 				29B367A61CB8DEFF006A1D42 /* Assets.xcassets in Resources */,
 				29B367CD1CB8E294006A1D42 /* GroupBloom.storyboard in Resources */,
+				298C116F1CBA034100F2453B /* PersonalBloom.storyboard in Resources */,
+				298C116B1CB9FC1200F2453B /* Home.storyboard in Resources */,
 				29B367A41CB8DEFF006A1D42 /* Login.storyboard in Resources */,
 				298C11601CB9887900F2453B /* ActionModal.storyboard in Resources */,
 			);
@@ -453,15 +481,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				29B367A11CB8DEFF006A1D42 /* LoginViewController.swift in Sources */,
+				298C11691CB9E4A600F2453B /* PagingAPIController.swift in Sources */,
 				298C11461CB90B0F00F2453B /* ThemeApplier.swift in Sources */,
 				298C11381CB8FEF300F2453B /* ActivityItemCell.swift in Sources */,
 				298C11481CB90C8B00F2453B /* Colors.swift in Sources */,
+				298C116D1CB9FC5600F2453B /* HomeViewController.swift in Sources */,
 				298C11661CB9C74900F2453B /* ActionModalViewController.swift in Sources */,
 				29B367CF1CB8E312006A1D42 /* GroupBloomViewController.swift in Sources */,
 				298C114D1CB914E300F2453B /* ChangeRootViewControllerSegue.swift in Sources */,
 				29B3679F1CB8DEFF006A1D42 /* AppDelegate.swift in Sources */,
 				298C114A1CB9112000F2453B /* UIViewController+KeyboardAvoidance.swift in Sources */,
+				298C11711CBA043200F2453B /* PersonalBloomViewController.swift in Sources */,
 				298C115E1CB9865F00F2453B /* ModalPresentationController.swift in Sources */,
+				298C11731CBA05E300F2453B /* ProfileCell.swift in Sources */,
 				298C115C1CB95E8E00F2453B /* BloomView.swift in Sources */,
 				298C11431CB903C900F2453B /* BloomAPI.swift in Sources */,
 			);

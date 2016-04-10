@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="372"/>
         </scene>
-        <!--GroupBloom-->
+        <!--Home-->
         <scene sceneID="6Dn-Hl-MdG">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="GroupBloom" storyboardName="GroupBloom" id="XID-PN-GUe" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="GroupBloom" storyboardName="Home" id="XID-PN-GUe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95s-Wa-r8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="772.5" y="299"/>

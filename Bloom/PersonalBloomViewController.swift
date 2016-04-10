@@ -9,15 +9,14 @@
 import UIKit
 import SwiftTask
 
-private let ContentInset: CGFloat = 200
 private let MaximumAlpha: CGFloat = 0.0
 private let MinimumAlpha: CGFloat = 0.0
 
-class GroupBloomViewController: UIViewController {
+class PersonalBloomViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bloomView: BloomView!
     
-    private var flowersFetchController: PagingAPIController<GroupBloomViewController>!
+    private var flowersFetchController: PagingAPIController<PersonalBloomViewController>!
     private var originFlowers: [BloomAPI.OrganizationFlowersResponse.Send] = []
     private var groupedFlowers: [FlowerGroup] = []
     
@@ -26,7 +25,6 @@ class GroupBloomViewController: UIViewController {
         var flowers: [BloomAPI.OrganizationFlowersResponse.Send]
     }
     
-    private var object : AnyObject?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.flowersFetchController = PagingAPIController(source: self)
@@ -36,15 +34,11 @@ class GroupBloomViewController: UIViewController {
         self.tableView.estimatedRowHeight = 60
         self.bloomView.startBloom()
         
-        self.object = self.flowersFetchController.reload()!.success { (response) in
-            self.updateGroupedFlowers()
-        }.failure { (error, isCancelled) in
-            
-        }
+        self.flowersFetchController.reload()
     }
 }
 
-extension GroupBloomViewController {
+extension PersonalBloomViewController {
     func updateGroupedFlowers() {
         self.groupedFlowers.removeAll()
         let dates = NSMutableOrderedSet()
@@ -76,7 +70,7 @@ extension GroupBloomViewController {
     }
 }
 
-extension GroupBloomViewController: UITableViewDataSource {
+extension PersonalBloomViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return groupedFlowers.count + 1
     }
@@ -90,13 +84,15 @@ extension GroupBloomViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: UITableViewCell?
+        
         if indexPath.section == 0 {
-            let cell = UITableViewCell()
-            cell.backgroundColor = UIColor.clearColor()
-            return cell
+            cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell")
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         }
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") {
+        if let cell = cell {
             return cell
         } else {
             return UITableViewCell()
@@ -104,18 +100,28 @@ extension GroupBloomViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch (indexPath.section, indexPath.row) {
+        case (0, 0):
+            if let cell = cell as? ProfileCell {
+                cell.organizationLabel.text = AppDelegate.sharedDelegate().store.organization?.name
+                cell.nameLabel.text = AppDelegate.sharedDelegate().store.user?.name
+            }
+            break
+        default:
+            break
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return ContentInset
+            return tableView.frame.size.width
         } else {
             return UITableViewAutomaticDimension
         }
     }
 }
 
-extension GroupBloomViewController: UITableViewDelegate {
+extension PersonalBloomViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             return nil
@@ -130,13 +136,13 @@ extension GroupBloomViewController: UITableViewDelegate {
     }
 }
 
-extension GroupBloomViewController: UIViewControllerTransitioningDelegate {
+extension PersonalBloomViewController: UIViewControllerTransitioningDelegate {
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         return ModalPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
 }
 
-extension GroupBloomViewController {
+extension PersonalBloomViewController {
     @IBAction func didTapActionButton(sender: AnyObject) {
         let storyboard = UIStoryboard(name: "ActionModal", bundle: nil)
         if let viewController = storyboard.instantiateInitialViewController() {
@@ -147,16 +153,17 @@ extension GroupBloomViewController {
     }
 }
 
-extension GroupBloomViewController: PagingAPISource {
+extension PersonalBloomViewController: PagingAPISource {
     func callPagingAPI(beginId: Int?) -> Task<Void, BloomAPI.OrganizationFlowersResponse?, NSError> {
         let organizationId = AppDelegate.sharedDelegate().store.organization!.id
-        return BloomAPI.organizationFlowers(organizationId, beginId: beginId)
-    }
-}
-
-extension GroupBloomViewController {
-    @IBAction func bloomPostedActionForSegus(segue: UIStoryboardSegue) {
-        self.bloomView.addBloom()
+        let task = BloomAPI.organizationFlowers(organizationId, beginId: beginId)
+        task.success { (response) in
+            self.updateGroupedFlowers()
+        }
+        task.failure { (error, isCancelled) -> BloomAPI.OrganizationFlowersResponse? in
+            return nil
+        }
+        return task
     }
 }
 

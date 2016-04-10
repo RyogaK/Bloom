@@ -10,9 +10,15 @@ import UIKit
 import SpriteKit
 
 class BloomView: SKView {
+    var bloomScene : BloomScene!
+    
     func startBloom() {
-        let scene = BloomScene(size: self.bounds.size)
-        self.presentScene(scene)
+        self.bloomScene = BloomScene(size: self.bounds.size)
+        self.presentScene(self.bloomScene)
+    }
+    
+    func addBloom() {
+        self.bloomScene.addFlower(self.bounds, delay: 0.3, nowSended: true)
     }
 }
 
@@ -40,12 +46,12 @@ class BloomScene: SKScene {
     
     private func createContents(rect: CGRect) {
         for i in 0...80 {
-            addFlower(rect, delay: NSTimeInterval(i) * 0.1)
+            addFlower(rect, delay: NSTimeInterval(i) * 0.1, nowSended: false)
         }
     }
     
-    private func addFlower(rect: CGRect, delay: NSTimeInterval) {
-        let flower = Flower(rect: rect, delay: delay)
+    private func addFlower(rect: CGRect, delay: NSTimeInterval, nowSended: Bool) {
+        let flower = Flower(rect: rect, delay: delay, senderMode: nowSended)
         self.flowers.append(flower)
         self.addChild(flower.spriteNode)
     }
@@ -66,9 +72,12 @@ class BloomScene: SKScene {
         var rotationSpeed: CGFloat
         var delay: NSTimeInterval
         
-        init(rect: CGRect, delay: NSTimeInterval) {
+        let senderMode: Bool
+        
+        init(rect: CGRect, delay: NSTimeInterval, senderMode: Bool) {
             spriteNode = self.dynamicType.newFlowerNode(rect)
             self.delay = delay
+            self.senderMode = senderMode
             self.rotationOffset = self.dynamicType.randomBetween0and1() * 2 * CGFloat(M_PI)
             self.rotationSpeed = (self.dynamicType.randomBetween0and1() - 0.5)
         }
@@ -82,8 +91,14 @@ class BloomScene: SKScene {
             if currentTime - startTime < delay {
                 scale = 0
             } else if currentTime < (startTime + delay + self.dynamicType.Duration) {
-                let normalizedDuration = (currentTime - (startTime + delay)) / self.dynamicType.Duration
-                scale = normalizedDuration
+                if self.senderMode {
+                    let normalizedDuration = (currentTime - (startTime + delay)) / self.dynamicType.Duration
+                    scale = 2 - normalizedDuration
+                    spriteNode.alpha = CGFloat(normalizedDuration)
+                } else {
+                    let normalizedDuration = (currentTime - (startTime + delay)) / self.dynamicType.Duration
+                    scale = normalizedDuration
+                }
             }
             spriteNode.setScale(CGFloat(scale))
             spriteNode.zRotation = CGFloat(currentTime) * rotationSpeed + self.rotationOffset
