@@ -64,6 +64,7 @@ class BloomScene: SKScene {
     
     private class Flower {
         private static let Duration = 0.2
+        private static let SenderDuration = 0.5
         
         var spriteNode: SKSpriteNode!
         
@@ -100,6 +101,24 @@ class BloomScene: SKScene {
                     scale = normalizedDuration
                 }
             }
+            
+            if currentTime - startTime < delay {
+                scale = 0
+            } else {
+                if self.senderMode {
+                    if currentTime < (startTime + delay + self.dynamicType.SenderDuration) {
+                        let normalizedDuration = (currentTime - (startTime + delay)) / self.dynamicType.SenderDuration
+                        scale = 2 - normalizedDuration
+                        spriteNode.alpha = CGFloat(normalizedDuration)
+                    }
+                } else {
+                    if currentTime < (startTime + delay + self.dynamicType.Duration) {
+                        let normalizedDuration = (currentTime - (startTime + delay)) / self.dynamicType.Duration
+                        scale = normalizedDuration
+                    }
+                }
+            }
+            
             spriteNode.setScale(CGFloat(scale))
             spriteNode.zRotation = CGFloat(currentTime) * rotationSpeed + self.rotationOffset
         }
